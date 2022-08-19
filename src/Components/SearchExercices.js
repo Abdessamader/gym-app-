@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import { Box, Button, Stack, TextField, Typography} from '@mui/material'
-import { fetchData } from '../Utilities/fetchData'
+import { exerciceOptions, fetchData } from '../Utilities/fetchData'
 
 const SearchExercices = () => {
     const [search, setSearch] = useState('')
     const handleSearch = async() => {
       if(search) {
-          const exercicesData = await fetchData() 
-      }
+          const exercicesData = await fetchData('https://exercicesdb.p.rapidapi.com/exercices/bodyPartList', exerciceOptions); 
+        console.log(exercicesData)
+        }
     }
 
   return (
